@@ -62,7 +62,7 @@ mkdir:
 		return 1
 	}
 	// write out main.go
-	f, err := os.OpenFile(filepath.Join(dir, mainFile), os.O_RDWR|os.O_CREATE, 0755)
+	f, err := os.OpenFile(filepath.Join(dir, mainFile), os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		fmt.Println(err)
 		return 1
