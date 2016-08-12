@@ -34,6 +34,11 @@ func init() {
 }
 
 func main() {
+	os.Exit(realMain())
+}
+
+// The actual work is done here; allows defers to run.
+func realMain() int {
 	flag.Parse()
 
 	// set up the ticker
@@ -50,7 +55,7 @@ func main() {
 		w, err = os.OpenFile(output, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0644)
 		if err != nil {
 			fmt.Println(err)
-			os.Exit(1)
+			return(1)
 		}
 		defer w.(*os.File).Close()
 	}
@@ -81,6 +86,8 @@ func main() {
 	err = bench.Out()
 	if err != nil {
 		fmt.Printf("error generating output: %s\n", err)
+		return 1
 	}
+	return 0
 }
 `
