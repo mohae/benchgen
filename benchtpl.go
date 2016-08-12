@@ -73,7 +73,7 @@ func main() {
 	// override column headers (if applicable)
 
 	// run the benchmarks and append the results
-
+	bench.Append(dummyBenchmark())
 
 	// create the output
 	fmt.Println("")
