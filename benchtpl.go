@@ -76,6 +76,11 @@ func realMain() int {
 	bench.NameSections(nameSections)
 
 	// override column headers (if applicable)
+	//	bench.SetGroupColumnHeader("")
+	//	bench.SetSubGroupColumnHeader("")
+	//	bench.SetNameColumnHeader("")
+	//	bench.SetDescColumnHeader("")
+	//	bench.SetNoteColumnHeader("")
 
 	// run the benchmarks and append the results
 	bench.Append(dummyBenchmark())
